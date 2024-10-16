@@ -21,48 +21,54 @@
  * @author Brandon Edoria
  */
 
-public with sharing class VariablesDataTypesOperators {
+public with sharing class VariablesDataTypesOperators
+{
     /**
      * Question 1
      * Performs addition of two numbers.
      * If either of the numbers is null, return null.
      * Example: addition(1, 2) should return 3
-     * @param a The first number.
-     * @param b The second number.
+     * @param num1 The first number.
+     * @param num2 The second number.
      * @return The sum of the two numbers, or null if either number is null.
      */
-    public static Integer addition(Integer a, Integer b) {  
-        
-        If (a == null || b == null) {
+    public static Integer addition(Integer num1, Integer num2)
+    {  
+        If (num1 == null || num2 == null) // Returns null if either number is null
+        {
             return null;
         }
         
-        Integer result = a + b;
-        return result; // Replace null with the variable you used to store the result
+        Integer addResult = num1 + num2;
+        return addResult; // Replaced null with the variable (addResult) you used to store the result
     }
 
     /**
      * Question 2
      * Performs subtraction of two numbers.
      * Example: subtraction(1, 2) should return -1
-     * @param a The first number.
-     * @param b The second number.
+     * @param num1 The first number.
+     * @param num2 The second number.
      * @return The difference between the two numbers.
      */
-    public static Integer subtraction(Integer a, Integer b) {
-        return null; // Replace null with the variable you used to store the result
+    public static Integer subtraction(Integer num1, Integer num2)
+    {
+        Integer subResult = num1 - num2;
+        return subResult; // Replaced null with the variable (subResult) you used to store the result
     }
 
     /**
      * Question 3
      * Performs multiplication of two numbers.
      * Example: multiplication(2, 3) should return 6
-     * @param a The first number.
-     * @param b The second number.
+     * @param num1 The first number.
+     * @param num2 The second number.
      * @return The product of the two numbers.
      */
-    public static Integer multiplication(Integer a, Integer b) {
-        return null; // Replace null with the variable you used to store the result
+    public static Integer multiplication(Integer num1, Integer num2)
+    {
+        Integer multResult = num1 * num2;
+        return multResult; // Replaced null with the variable (multResult) you used to store the result
     }
 
     /**
@@ -70,12 +76,19 @@ public with sharing class VariablesDataTypesOperators {
      * Performs division of two numbers.
      * If the denominator is zero, return 0 to avoid division by zero error.
      * Example: division(6, 3) should return 2
-     * @param a The numerator.
-     * @param b The denominator.
+     * @param num The numerator.
+     * @param denom The denominator.
      * @return The quotient of the division, or 0 if the denominator is zero.
      */
-    public static Decimal division(Integer a, Integer b) {
-        return null; // Replace null with the variable you used to store the result
+    public static Decimal division(Integer num, Integer denom)
+    {
+        If (denom == 0) // Returns 0 if the denominator is 0
+        {
+            return 0;
+        }
+        
+        Decimal divResult = num / denom;
+        return divResult; // Replaced null with the variable (divResult) you used to store the result
     }
 
     /**
@@ -88,8 +101,18 @@ public with sharing class VariablesDataTypesOperators {
      * @param num The number to check.
      * @return True if the number is even, False otherwise.
      */
-    public static Boolean isEven(Integer num) {
-        return null; // Replace null with the variable you used to store the result
+    public static Boolean isEven(Integer num) 
+    {
+        Integer remainder = math.mod(num , 2); // Usese the Math Class and Modulus Function to return the remainder of num divided by 2
+        
+        If (remainder == 0) // Returns true if the remainder is 0, false otherwise
+        {
+            return true;
+        } 
+        else 
+        {
+            return false;
+        }
     }
 
     /**
@@ -99,8 +122,16 @@ public with sharing class VariablesDataTypesOperators {
      * @param num The number to check.
      * @return true if the number is positive, false otherwise.
      */
-    public static Boolean isPositive(Integer num) {
-        return null; // Replace null with the variable you used to store the result
+    public static Boolean isPositive(Integer num)
+    {
+        If (num > 0) // Returns true if number is above 0, false otherwise
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /**
@@ -111,8 +142,10 @@ public with sharing class VariablesDataTypesOperators {
      * @param str2 The second string.
      * @return The concatenated string.
      */
-    public static String concatenateStrings(String str1, String str2) {
-        return null; // Replace null with the variable you used to store the result
+    public static String concatenateStrings(String str1, String str2)
+    {
+        String combinedString = str1 + str2;
+        return combinedString; // Replaced null with the variable (combinedString) you used to store the result
     }
 
 	/**
@@ -126,8 +159,10 @@ public with sharing class VariablesDataTypesOperators {
 	 * @param endingPunctuation The punctuation to end the sentence, e.g., '.', '!', '?'
 	 * @return The complete sentence as a single String.
 	 */
-	public static String createSentence(String noun, String verb, String endingPunctuation) {
-		return null; // Replace null with the variable you used to store the result
+	public static String createSentence(String noun, String verb, String endingPunctuation)
+    {
+		String sentence = 'The ' + noun + ' is ' + verb + endingPunctuation; // Spaces added between words
+        return sentence; // Replaced null with the variable (sentence) you used to store the result
 	}
 
     /**
@@ -139,8 +174,16 @@ public with sharing class VariablesDataTypesOperators {
      * @param dt The date to check.
      * @return True if the date is in the past, False otherwise.
      */
-    public static Boolean isDateInPast(Date dt) {
-        return null; // Replace null with the variable you used to store the result
+    public static Boolean isDateInPast(Date dt)
+    {
+        If (dt < Date.today()) // Uses the Date Class and Today Function to return the current date in the user's timezone
+        {
+            return true; // Returns true if the date is in the past, false otherwise
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /**
@@ -152,8 +195,16 @@ public with sharing class VariablesDataTypesOperators {
      * @param dt The date to check.
      * @return True if the date is today or in the future, False otherwise.
      */
-    public static Boolean isDateTodayOrFuture(Date dt) {
-        return null; // Replace null with the variable you used to store the result
+    public static Boolean isDateTodayOrFuture(Date dt)
+    {
+        If (dt >= Date.today()) // Uses the Date Class and Today Function to return the current date in the user's timezone
+        {
+            return true; // Returns true if the date is topday or in the future, false otherwise
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /**
@@ -165,10 +216,11 @@ public with sharing class VariablesDataTypesOperators {
      * @param minutes The number of minutes.
      * @return The number of milliseconds equivalent to the given number of minutes.
      */
-    public static Integer convertMinutesToMilliseconds(Integer minutes) {
-        Integer MILLISECONDS_PER_MINUTE = null; // Make this value a constant
-        Integer milliseconds;
-        return null; // Replace null with the variable you used to store the result
+    public static Integer convertMinutesToMilliseconds(Integer minutes)
+    {
+        final Integer MILLISECONDS_PER_MINUTE = 60000; // Make this value a constant by putting keyword 'final' in front of datatype
+        Integer milliseconds = minutes * MILLISECONDS_PER_MINUTE;
+        return milliseconds; // Replaced null with the variable (milliseconds) you used to store the result
     }    
 
     /**
@@ -176,13 +228,15 @@ public with sharing class VariablesDataTypesOperators {
      * Calculates the average of three numbers.
      * Formula: Average = (Sum of Numbers) ÷ (Total Numbers)
      * Example: averageOfThreeNumbers(1, 2, 3) should return 2
-     * @param a The first number.
-     * @param b The second number.
-     * @param c The third number.
+     * @param num1 The first number.
+     * @param num2 The second number.
+     * @param num3 The third number.
      * @return The average of the three numbers.
      */
-    public static Double averageOfThreeNumbers(Integer a, Integer b, Integer c) {
-        return null; // Replace null with the variable you used to store the result
+    public static Double averageOfThreeNumbers(Integer num1, Integer num2, Integer num3)
+    {
+        Double avg = (num1 + num2 + num3) / 3;
+        return avg; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -190,17 +244,18 @@ public with sharing class VariablesDataTypesOperators {
      * Adjusts the order of operations in an arithmetic expression to produce a desired result.
      * In this case, parentheses are added to the expression (5 + 7) * 3 to ensure that addition is performed before multiplication.
      * Example: adjustOrderOfOperations1(5, 7, 3) should return 36
-     * @param a The first number.
-     * @param b The second number.
-     * @param c The third number.
+     * @param num1 The first number.
+     * @param num2 The second number.
+     * @param num3 The third number.
      * @return The result of the adjusted arithmetic expression.
      */
-    public static Integer adjustOrderOfOperations1(Integer a, Integer b, Integer c) {
+    public static Integer adjustOrderOfOperations1(Integer num1, Integer num2, Integer num3)
+    {
         // Add parentheses around the addition operation so that it is performed before multiplication
-        Integer result = a + b * c;
+        Integer opResult = (num1 + num2) * num3;
 
         // Return the result
-        return null; // Replace null with the variable you used to store the result
+        return opResult; // Replaced null with the variable (opResult) you used to store the result
     }
 
     /**
@@ -212,8 +267,8 @@ public with sharing class VariablesDataTypesOperators {
         // Add parentheses in the below expression to change the result.
         // The result of the expression as it is right now is 43. 
         // You should add parentheses so that the result of the expression becomes 8.
-        Integer answer = 48 - 15 + 5 * 2;
-        return null; // Replace null with the variable you used to store the result
+        Integer opResult = 48 - ((15 + 5) * 2);
+        return opResult; // Replaced null with the variable (opResult) you used to store the result
     }
 
     /**
@@ -223,18 +278,19 @@ public with sharing class VariablesDataTypesOperators {
      * multiplication and subtraction are performed before division, which in turn is performed 
      * before addition.
      * Example: adjustOrderOfOperations3(1, 2, 3, 4, 5) should return 4.5
-     * @param a The first number.
-     * @param b The second number.
-     * @param c The third number.
-     * @param d The fourth number.
-     * @param e The fifth number.
+     * @param num1 The first number.
+     * @param num2 The second number.
+     * @param num3 The third number.
+     * @param num4 The fourth number.
+     * @param num5 The fifth number.
      * @return The result of the adjusted arithmetic expression.
      */
-    public static Double complexOrderOfOperations(Integer a, Integer b, Integer c, Integer d, Integer e) {
+    public static Double complexOrderOfOperations(Integer num1, Integer num2, Integer num3, Integer num4, Integer num5)
+    {
         // Add parentheses around the multiplication and subtraction operations so that they are performed before division and addition
-        Double result = a * b - c / (Double) d + e;
+        Double opResult = (num1 * num2 - num3) / (Double) num4 + num5; // Question: is the (Double) before num4 necessary here?
 
-        return null; // Replace null with the variable you used to store the result
+        return opResult; // Replaced null with the variable (opResult) you used to store the result
     }
 
     /**
@@ -244,12 +300,14 @@ public with sharing class VariablesDataTypesOperators {
      * @param fahrenheit The temperature in Fahrenheit.
      * @return The temperature in Celsius equivalent to the given Fahrenheit temperature.
      */
-    public static Double convertFahrenheitToCelsius(Double fahrenheit) {
+    public static Double convertFahrenheitToCelsius(Double fahrenheit)
+    {
         final Double SUBTRACT_FACTOR = 32.0;
         final Double MULTIPLY_FACTOR = 5.0;
         final Double DIVIDE_FACTOR = 9.0;
     
-        return null; // Replace null with the variable you used to store the result
+        Double celsius = (fahrenheit - SUBTRACT_FACTOR) * MULTIPLY_FACTOR / DIVIDE_FACTOR;
+        return celsius; // Replaced null with the variable (celsius) you used to store the result
     }
 
     
@@ -259,17 +317,18 @@ public with sharing class VariablesDataTypesOperators {
      * Performs division and returns the result as a casted Integer.
      * It should cast the result to an Integer.
      * Example: 3 / 2 => 1.5 should return 1
-     * @param a The numerator.
-     * @param b The denominator.
+     * @param num The numerator.
+     * @param denom The denominator.
      * @return The quotient as a casted (round down) Integer.
      */
-    public static Integer performDivisionAndCast(Double a, Double b) {
+    public static Integer performDivisionAndCast(Double num, Double denom)
+    {
         // Perform the division and cast (round down) off the result.
-        Double divisionResult = null;
+        Double divisionResult = num / denom;
 
         // Write the code for type casting the divisionResult to an Integer
-        Integer roundedResult = null;
-        return null; // Replace null with the variable you used to store the result
+        Integer roundedResult = divisionResult.intValue(); // intValue() Function returns the integer value of decimal variable divisionResult
+        return roundedResult; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -281,9 +340,11 @@ public with sharing class VariablesDataTypesOperators {
      * @param numberOfHours The number of hours worked in a week.
      * @return A Decimal representing the weekly paycheck.
      */
-    public static Decimal calculateWeeklyPaycheck(Decimal hourlyRate, Double numberOfHours) {
+    public static Decimal calculateWeeklyPaycheck(Decimal hourlyRate, Double numberOfHours)
+    {
         // Calculate the weekly paycheck using the formula: rate multiplied by hours
-        return null; // Replace null with the variable you used to store the result
+        Decimal weeklyPaycheck = hourlyRate * numberOfHours;
+        return weeklyPaycheck; // Replaced null with the variable (weeklyPaycheck) you used to store the result
     }
 
     /**
@@ -296,8 +357,11 @@ public with sharing class VariablesDataTypesOperators {
      * @param numberOfHours The number of hours worked in a week.
      * @return A Decimal representing the monthly paycheck.
      */
-    public static Decimal calculateMonthlyPaycheck(Decimal hourlyRate, Double numberOfHours) {
-        return null; // Replace null with the variable you used to store the result
+    public static Decimal calculateMonthlyPaycheck(Decimal hourlyRate, Double numberOfHours)
+    {
+        Decimal weeklyPaycheck = hourlyRate * numberOfHours;
+        Decimal monthlyPaycheck = weeklyPaycheck * 4;
+        return monthlyPaycheck; // Replaced null with the variable (monthlyPaycheck) you used to store the result
     }
 
     /**
@@ -310,7 +374,9 @@ public with sharing class VariablesDataTypesOperators {
      * @param salesTaxRate The sales tax rate as a decimal (e.g., 0.05 for 5% tax).
      * @return The total cost after applying the sales tax.
      */
-    public static Decimal calculateTotalCost(Decimal pricePerUnit, Integer numberOfUnits, Decimal salesTaxRate) {
-        return null; // Replace null with the variable you used to store the result
+    public static Decimal calculateTotalCost(Decimal pricePerUnit, Integer numberOfUnits, Decimal salesTaxRate)
+    {
+        Decimal totalCost = (pricePerUnit * numberOfUnits) * (1 + salesTaxRate);
+        return totalCost; // Replaced null with the variable (totalCost) you used to store the result
     }
 }

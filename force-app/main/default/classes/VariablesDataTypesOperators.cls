@@ -262,7 +262,7 @@ public with sharing class VariablesDataTypesOperators
 
     public static Double complexOrderOfOperations(Integer num1, Integer num2, Integer num3, Integer num4, Integer num5)
     {
-        return (num1 * num2 - num3) / (Double) num4 + num5; // Question: is the (Double) before num4 necessary here?
+        return (Double) (num1 * num2 - num3) / (Double) num4 + num5; // Question: is the (Double) before num4 necessary here?
     }
 
     /**

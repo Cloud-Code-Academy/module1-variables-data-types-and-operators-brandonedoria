@@ -18,7 +18,7 @@
  * If statements are not specifically covered in the lesson this module, but review module 2 flow control section for an overview if needed.
  * Resources: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_if_else.htm 
  * 
- * @author Brandon Edoria
+ * @author Brandon T. Edoria
  */
 
 public with sharing class VariablesDataTypesOperators
@@ -41,7 +41,9 @@ public with sharing class VariablesDataTypesOperators
         }
         else
         {
-            return num1 + num2;
+            Integer resultAdd = num1 + num2;
+            System.debug('#### The result is: ' + resultAdd);
+            return resultAdd;
         }
     }
 

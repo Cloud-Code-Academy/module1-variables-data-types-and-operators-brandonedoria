@@ -35,6 +35,7 @@ public with sharing class VariablesDataTypesOperators
 
     // THIS IS TO TEST THE TEST BRANCH
     // this is another test
+    // extra test commment
 
     public static Integer addition(Integer num1, Integer num2)
     {  
